@@ -1,0 +1,250 @@
+.header{
+    border-style: none none solid none;
+    border-color: gray;
+    margin-top:40px;
+    margin-left:120px;
+    width:1150px;
+    display: inline-flex;
+}
+.normal {
+    width: 1424px;
+    height: 1456.88px;
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+
+.like {
+
+    position: absolute;
+    top:0;
+    left: 60px;
+    width: 50px;
+    color: cornflowerblue;
+    text-decoration: underline;
+    background-color: rgba(225,225,225,0.8);
+    opacity: 0;
+
+}
+.totalLike {
+    display: none;
+    color:white;
+    background-color: darkslategrey;
+    padding-left:5px;
+    height: 15px;
+    width: 15px;
+}
+.likedList{
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+.likedList>p{
+    width: 150px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.movieDetail:hover .like, .like:hover{
+    width: 150px;
+    opacity: 1;
+}
+.list{
+    height: 23px;
+    font-size: 20px;
+    margin-left: 20px;
+    padding-top: 5px;
+    border-bottom: 2px solid orange;
+}
+.h1{
+    margin-left:120px;
+    width:1200px;
+}
+.movieDetail {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    padding-left: 60px;
+    padding-right: 40px;
+}
+.movieDetail>p {
+    width: 150px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.box {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.img {
+    height: 250px;
+    width: 150px;
+}
+.title {
+    font-weight: bold;
+}
+.topBar {
+    margin-left:-40px;
+    text-align: center;
+    margin-bottom: -10px;
+    margin-top: 15px;
+}
+#pageDe {
+    margin-right:450px;
+}
+
+#pageIn {
+    margin-left:380px;
+}
+.overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index:1001;
+    -moz-opacity: 0.8;
+    opacity:.6;
+    filter: alpha(opacity=88);
+}
+.content {
+    color: white;
+    display: none;
+    position: fixed;
+    top: 15%;
+    left: 13%;
+    width: 70%;
+    height: 65%;
+    padding: 20px;
+    background-color: black;
+    z-index:1002;
+    overflow: auto;
+}
+
+.configoverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    color: black;
+}
+.dropImg{
+    height: 80%;
+    width: 25%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.contentLeft {
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 40%;
+    color: white;
+}
+
+.genres>li{
+    border-radius: 25px;
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}
+
+.contentLeft>p{
+    padding-right: 40px;
+}
+
+.genres {
+    padding-left: 0;
+}
+
+.company{
+    margin-top: 50px;
+    padding: 0;
+    width: 560px;
+    background-color: rgba(225,225,225, 0.8);
+}
+.company>li{
+    padding: 10px;
+
+    display: inline-block;
+    text-align: center;
+}
+
+.company>li>img {
+    height: 50px;
+    width: 120px;
+}
+
+.close {
+    text-decoration: none;
+    color: black;
+    margin-top: 6%;
+    margin-right: 9%;
+    float: right;
+    font-size: 20px;
+}
+.configClose {
+    right: 15%;
+    top:13%;
+    text-decoration: none;
+    position: fixed;
+    color: black;
+    font-size: 20px;
+}
+.loading {
+    font-size: 100px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    display: block;
+    z-index: 10003;
+}
+
+#likedList {
+    display: none;
+}
+.liked{
+    display: none;
+    width: 1424px;
+    z-index: 1009;
+}
+.subList{
+    width: 1150px;
+    margin-left: 116px;
+}
+
+.config {
+    position: absolute;
+    right: 200px;
+    display: none;
+}
+
+.config:hover {
+    color: lightblue;
+}
+
+.configPage {
+    margin-left: -200px;
+    margin-top: 120px;
+}
+.drag {
+    color: black;
+    width: 500px;
+    height: 20px;
+    margin-left: 40%;
+    padding: 20px;
+    margin-bottom: 7px;
+    background-color: rgba(103, 128, 159, 0.7);
+    display: block;
+}

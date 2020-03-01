@@ -1,0 +1,9 @@
+.itemDone {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.item{
+    display: flex;
+    height: auto;
+}

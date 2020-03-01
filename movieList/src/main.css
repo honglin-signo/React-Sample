@@ -1,0 +1,96 @@
+.image {
+    width: 45%;
+}
+
+.homepage {
+    text-align: center;
+    background-color: gainsboro;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.button {
+    margin-right: 20px;
+}
+
+.nav {
+    z-index: 100;
+    height: 100%;
+    background-color: lightblue;
+    position: fixed;
+    text-align: center;
+    transition: all 1s;
+}
+
+.navItem {
+    border-color: darkblue;
+    border-bottom-style: solid;
+}
+
+.sortBar {
+    margin-top: 20px;
+    height: 50px;
+    width: 100%;
+}
+
+.pageBar {
+    border-width: 2px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+}
+
+.subItem {
+    margin: 5px;
+    width: 170px;
+    display: inline-block;
+}
+
+.options {
+    position: absolute;
+    bottom: 0;
+    z-index: 200;
+    opacity: 0;
+}
+
+.subItem:hover .options {
+    opacity: 1;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index:1001;
+    -moz-opacity: 0.8;
+    opacity:.6;
+    filter: alpha(opacity=88);
+}
+.content {
+    position: fixed;
+    top: 10%;
+    left: 30%;
+    width: 40%;
+    height: 85%;
+    padding: 20px;
+    background-color: lightblue;
+    z-index:1002;
+    overflow: auto;
+}
+
+.close {
+    margin-top: 5%;
+    margin-right: 20%;
+}
+
+.detailGroup {
+    text-align: center;
+}
+
+.detailGroup > li {
+    list-style-type: none;
+
+}

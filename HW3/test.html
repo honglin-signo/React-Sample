@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW3 Bootstrap</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+    <table id="cart" class="table  table-hover table-condensed">
+        <thead>
+        <tr >
+            <th style="width:50%" >Product</th>
+            <th  style="width:10%" class="text-center">Discount</th>
+            <th style="width:8%" class="text-center">Quantity</th>
+            <th  style="width:10%" class="text-center">Price</th>
+            <th  style="width:22%" class="text-center">Action</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <tr id="maotai">
+            <td data-th="Product">
+                <div class="row">
+                    <div class="col-sm-3 hidden-xs"><img src="image/wine.jpg" style="height:100px;" alt="..." class="img"/></div>
+                    <div class="col-sm-7  ">
+                        <h4 class="nomargin">Maotai</h4>
+                        <p>This is Maotai.</p>
+                    </div>
+                </div>
+            </td>
+            <td class="text-center" id="maoDiscount" data-th="Discount">35%</td>
+            <td class="text-center" data-th="Quantity">
+                <select class="form-control"  id="mao" onchange="getSinglePrice(this.id)">
+                    <option>0</option>
+                    <option selected="selected">1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+            </td>
+            <td class="text-center" id="maotaiPrice" data-th="Price">$13.33</td>
+            <td class="actions text-center" >
+                <button class="btn btn-info btn-sm " id="maoPop" data-toggle="popover" title="remaining" data-content="2" data-placement="left"><i class="fa fa-refresh"></i></button>
+
+                <button class="btn btn-danger btn-sm " data-toggle="collapse" data-target="#maotai" id="maoEmpty" onclick="emptyItem(this.id)" ><i class="fa fa-trash-o"></i></button>
+
+            </td>
+
+        </tr>
+
+        <tr id="wuliangye" >
+            <td data-th="Product">
+                <div class="row">
+                    <div class="col-sm-3 hidden-xs"><img src="image/wine.jpg" style="height:100px;" alt="..." class="img-responsive"/></div>
+                    <div class="col-sm-7">
+                        <h4 class="nomargin">Wuliangye</h4>
+                        <p>This is Wulinagye.</p>
+                    </div>
+                </div>
+            </td>
+            <td class="text-center" data-th="Discount">N/A</td>
+            <td class="text-center" data-th="Quantity">
+                <select class="form-control"  id="wu" onchange="getSinglePrice(this.id)">
+                    <option>0</option>
+                    <option selected="selected">1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+            </td>
+            <td class="text-center" id="wuPrice" data-th="Price">$30.00</td>
+            <td class="actions text-center">
+                <button class="btn btn-info btn-sm" id="wuPop" data-toggle="popover" title="remaining" data-content="2" data-placement="left"><i class="fa fa-refresh"></i></button>
+                <button class="btn btn-danger btn-sm" data-toggle="collapse" data-target="#wuliangye" id="wuEmpty" onclick="emptyItem(this.id)"><i class="fa fa-trash-o"></i></button>
+            </td>
+        </tr>
+
+        <tr id="jiannanchun" class="collapse show">
+            <td data-th="Product" >
+                <div class="row">
+                    <div class="col-sm-3 hidden-xs"><img src="image/wine.jpg" style="height:100px;" alt="..." class="img-responsive"/></div>
+                    <div class="col-sm-7">
+                        <h4 class="nomargin">Jiannanchun</h4>
+                        <p>This is Jiannanchun.</p>
+                    </div>
+                </div>
+            </td>
+            <td class="text-center" data-th="Discount">15%</td>
+            <td class="text-center" data-th="Quantity">
+                <select class="form-control" onchange="getSinglePrice(this.id)" id="jian">
+                    <option>0</option>
+                    <option selected="selected">1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </td>
+            <td class="text-center" id="jianPrice" data-th="Price">$34.00</td>
+            <td class="actions text-center">
+                <button class="btn btn-info btn-sm" id="jianPop" data-toggle="popover" title="remaining" data-content="4" data-placement="left"><i class="fa fa-refresh"></i></button>
+                <button class="btn btn-danger btn-sm" data-toggle="collapse" data-target="#jiannanchun" id="jianEmpty" onclick="emptyItem(this.id)"><i class="fa fa-trash-o"></i></button>
+            </td>
+        </tr>
+
+        <tr id="erguotou" class="collapse show">
+            <td  data-th="Product" >
+                <div class="row">
+                    <div class="col-sm-3 hidden-xs"><img src="image/wine.jpg" style="height:100px;" alt="..." class="img-responsive"/></div>
+                    <div class="col-sm-7">
+                        <h4 class="nomargin">Erguotou</h4>
+                        <p>This is Erguotou.</p>
+                    </div>
+                </div>
+            </td>
+            <td class="text-center" data-th="Discount">40%</td>
+            <td class="text-center" data-th="Quantity">
+                <select class="form-control" onchange="getSinglePrice(this.id)" id="er">
+                    <option>0</option>
+                    <option selected="selected">1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                </select>
+            </td>
+            <td class="text-center" id="erPrice" data-th="Price">$30.00</td>
+            <td class="actions text-center">
+                <button class="btn btn-info btn-sm" id="erPop" data-toggle="popover" title="remaining" data-content="5" data-placement="left"><i class="fa fa-refresh"></i></button>
+                <button class="btn btn-danger btn-sm" data-toggle="collapse" data-target="#erguotou" id="erEmpty" onclick="emptyItem(this.id)"><i class="fa fa-trash-o"></i></button>
+            </td>
+        </tr>
+        </tbody>
+
+        <tfoot>
+        <tr class="visible-xs">
+            <td colspan="4" class="hidden-xs"></td>
+            <td id="totalPrice" class="font-weight-bold text-center "><strong>Total $1.99</strong></td>
+        </tr>
+        <tr>
+            <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+            <td colspan="3" class="hidden-xs"></td>
+            <td><a href="#" class="btn btn-success btn-block" data-toggle="modal" data-target="#myModal" >Checkout <i class="fa fa-angle-right"></i></a></td>
+        </tr>
+        </tfoot>
+    </table>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <aside class="clm-sm-6">
+                <div class="modal-content container">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fa fa-calculator"></i>Let's have fun tonight!</h4>
+                        <button class="close" data-dismiss="modal" type="button">&times;</button>
+                    </div>
+                    <ul class="nav bg-light nav-pills rounded nav-fill mb-3" role="tablist">
+                        <li class="nav-item w-50">
+                            <a class="nav-link active" data-toggle="pill" href="#nav-tab-card">
+                                <i class="fa fa-credit-card"></i> Credit Card</a></li>
+                        <li class="nav-item w-50">
+                            <a class="nav-link" data-toggle="pill" href="#nav-tab-paypal">
+                                <i class="fa fa-paypal"></i>Paypal</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="pill" href="#nav-tab-bank">
+                                <i class="fa fa-university"></i>  Bank Transfer</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active tab-pane container" id="nav-tab-card">
+                            <form role="form" class="needs-validation">
+                                <div class="form-group">
+                                    <label for="username">Full name (on the card)</label>
+                                    <input class="form-control" id="username" placeholder="Enter Full Name" type="text">
+                                </div> <!-- form-group.// -->
+
+                                <div class="form-group">
+                                    <label for="cardNumber">Card number</label>
+                                    <div class="input-group">
+                                        <input class="form-control" id="cardNumber" maxlength="19" placeholder="Enter Card Number" type="text">
+                                        <div class="input-group-append">
+                                <span class="input-group-text text-muted">
+                                    <i class="fa fa-cc-visa m-lg-1"> </i><i class="fa fa-cc-amex m-lg-1"></i>    <i class="fa fa-cc-mastercard m-lg-1"></i>
+				                </span>
+                                        </div>
+                                    </div>
+                                </div> <!-- form-group.// -->
+
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <div class="form-group">
+                                            <label><span class="hidden-xs">Expiration</span> </label>
+                                            <div class="input-group">
+                                                <input  type="number"  class="form-control" placeholder="MM" onkeyup="this.value = limit(this.value, 12);" required>
+                                                <input  type="number"  class="form-control" placeholder="YY" onkeyup="this.value = limit(this.value, 9999);" r>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label data-toggle="tooltip" title="" data-original-title="3 digits code on back side of the card">CVV <i class="fa fa-question-circle"></i></label>
+                                            <input type="number" class="form-control" required="" placeholder="CVV" onkeyup="this.value = limit(this.value, 999);">
+                                        </div> <!-- form-group.// -->
+                                    </div>
+                                </div> <!-- row.// -->
+                                <div class="row">
+                                    <label class="checkbox-inline col font-weight-bold"><input type="checkbox" value=""> Agree to terms and condition</label>
+                                </div>
+                                <button class="subscribe btn btn-primary btn-block" type="submit"> Confirm  </button>
+                            </form>
+                        </div>
+
+                        <div class="tab-pane fade tab-pane container" id="nav-tab-paypal">
+                            <p>Paypal is easiest way to pay online</p>
+                            <p>
+                                <button type="button" class="btn btn-primary"> <i class="fab fa-paypal"></i> Log in my Paypal </button>
+                            </p>
+                            <p><strong>Note:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. </p>
+                        </div>
+
+                        <div class="tab-pane fade tab-pane container" id="nav-tab-bank">
+                            <p>Bank accaunt details</p>
+                            <dl class="param">
+                                <dt>BANK: </dt>
+                                <dd> THE WORLD BANK</dd>
+                            </dl>
+                            <dl class="param">
+                                <dt>Accaunt number: </dt>
+                                <dd> 12345678912345</dd>
+                            </dl>
+                            <dl class="param">
+                                <dt>IBAN: </dt>
+                                <dd> 123456789</dd>
+                            </dl>
+                            <p><strong>Note:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. </p>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </aside>
+
+            </div>
+    </div>
+</div>
+
+</body>
+<script src="js/main.js"></script>
+
+
+</html>

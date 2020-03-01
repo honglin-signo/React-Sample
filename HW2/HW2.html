@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Lib</title>
+    <link href="main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="loading" class="loading">Loading</div>
+
+<header class="header">
+    <img style="height: 40px; width: 40px; padding-bottom: 10px" src="images/tmdb.png" alt="tmdb">
+    <a class="list" id="normalList">Movie List</a>
+    <a class="list" id="likedList">Liked Movies</a>
+    <a class="totalLike" id="totalLike"></a>
+    <a class="config" id="config">CONFIG</a>
+</header>
+
+
+
+<!--Normal Pages-->
+<div class="normal" id="normal">
+    <div class="topBar">
+        <button type="button" id="pageDe">Previous</button>
+        <span id="total">500</span>
+        <button type="button" id="pageIn">Next</button>
+    </div>
+<h1 class="h1"> The Most Popular Movie </h1>
+<div class="box" id="container"></div>
+<div id="light" class="content">
+    <div class="contentLeft" id="leftContent">
+    </div>
+</div>
+    <div id="fade" class="overlay">
+        <a href="JavaScript:void(0)" class="close" id = "close" onclick="closeAll()">CLOSE</a>
+    </div>
+</div>
+
+<!--Liked Pages-->
+<div class="liked" id="liked">
+    <h1 class="h1">Liked List</h1>
+    <div class="subList" id="subList"></div>
+</div>
+
+
+<!--Config Page-->
+<div id="congfigFade" class="configoverlay">
+    <div class="configPage" id="configPage">
+    </div>
+    <a href="JavaScript:void(0)" class="configClose" id="configClose" onclick="closeConfig()">CLOSE</a>
+</div>
+
+</body>
+<script type="text/javascript" src="main.js"></script>
+</html>

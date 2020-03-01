@@ -1,0 +1,411 @@
+body {
+	font-family: AppleSystemUIFont, sans-serif;
+	margin:0;
+}
+
+header{
+	text-align: center;
+	background-color: black;
+	color: lightblue;
+	position: fixed;
+	left:0;
+	top:0;
+	width: 100%;
+	z-index: 1000;
+}
+
+/*navigation bar relative*/
+.navbar{
+	position:fixed;
+	top:79.88px;
+	clear:both;
+	background: whitesmoke;
+	color: black;
+	/*margin-top: 79.88px;*/
+	width: 100%;
+	z-index: 1000;
+	overflow: visible;
+}
+
+.navbar img{
+	padding-top: 15px;
+	padding-left: 10px;
+	height: 35px;
+	width: 35px;
+}
+
+/*All the element on the left side of navigation bar:text and images*/
+.left{
+	float: left;
+	margin-left: 20px;
+}
+
+/*Left navigation bar text box style*/
+.leftUl {
+	padding-right: 20px;
+	padding-left: 10px;
+}
+
+/*Left navigation bar text style*/
+.navbar>ul>li {
+	position: relative;
+	display:inline-block;
+	cursor: pointer;
+	font-size:15px;
+	padding:5px;
+}
+
+.navbar>ul li a {
+	outline: 0;
+	text-decoration: none;
+	color: #fff;
+}
+
+.navbar>ul li a:link {
+	color: black
+}
+
+.navbar>ul li a:hover {
+	background: url(../images/underline.svg) repeat-x bottom;
+}
+
+.mega {
+	top:40px;
+	position: absolute;
+	display: flex;
+	opacity: 0;
+	width:3700%;
+	left:-450%;
+	height: 300px;
+	background-image: url(../images/dropdown_bg.jpg);
+}
+
+.mega>ul {
+	width: 150px;
+	list-style-type: none;
+	align-self: center;
+	text-align: center;
+}
+
+.mega>img {
+	height: 280px;
+	width: 280px;
+	list-style-type: none;
+	align-self: center;
+	text-align: center;
+}
+
+.mega>ul>li {
+	height:35px;
+}
+.mega>ul>li:hover {
+	text-decoration: underline;
+}
+
+.d1 {
+	margin-left:350px;
+	top:40px;
+}
+
+.d2 {
+	margin-left:550px;
+}
+
+.d3 {
+	margin-left: 450px;
+}
+
+.dropdown {
+	height: 30px;
+}
+
+.drop1:hover .m1, .m1:hover{
+	opacity: 1;
+}
+.drop2:hover .m2 {
+	opacity: 1;
+}
+
+.drop3:hover .m3{
+	opacity: 1;
+}
+/*All the element on the right side of navigation bar*/
+.right {
+	margin-right: 20px;
+	cursor: pointer;
+	float: right;
+}
+
+.background {
+	content: url(../images/summer.jpg);
+	margin-left: 60px;
+	width: 1320px;
+}
+
+.banner {
+	width: 100%;
+	text-align: center;
+	position: relative;
+}
+
+.container {
+	margin-left: 60px;
+	display: grid;
+	/*width: 100%;*/
+	grid-template-columns: 600px 350px 350px;
+	grid-template-rows: 600px 200px 200px 300px 500px;
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
+	grid-template-areas:
+		"p1 p1 p2"
+		"p4 p3 p2"
+		"p4 p3 p7"
+		"p5 p3 p7"
+		"p5 p6 p6";
+}
+.p1 {
+	width: 960px;
+	height: 600px;
+	grid-area: p1;
+}
+
+.p1In {
+	grid-area: p1;
+	align-self: center;
+	justify-self: center;
+	text-align: center;
+	opacity: 0;
+}
+
+.p1In img {
+	width: 450px;
+	height: 300px;
+	background-color: white;
+	padding: 40px;
+}
+
+.p1In .text1 {
+	position: relative;
+	grid-area: p1;
+	bottom: 30px;
+}
+.p1:hover + .p1In, .p1In:hover, .p1In:hover + .text1 {
+	opacity: 0.5;
+}
+
+.p2 {
+	width: 350px;
+	height: 810px;
+	grid-area: p2;
+}
+
+.p2In {
+	grid-area: p2;
+	align-self: center;
+	justify-self: center;
+	text-align: center;
+	opacity: 0;
+}
+
+.p2In img {
+	width: 250px;
+	height: 610px;
+	background-color: white;
+	padding: 40px;
+}
+
+.p2In .text2 {
+	position: relative;
+	grid-area: p1;
+	bottom: 30px;
+}
+
+.p2:hover + .p2In, .p2In:hover, .p2In:hover + .text2 {
+	opacity: 0.5;
+}
+
+.p3 {
+	width: 350px;
+	height: 720px;
+	grid-area: p3;
+}
+
+.p3In {
+	grid-area: p3;
+	align-self: center;
+	justify-self: center;
+	text-align: center;
+	opacity: 0;
+}
+
+.p3In img {
+	width: 150px;
+	height: 550px;
+	background-color: white;
+	padding: 40px;
+}
+
+.p3In .text3 {
+	position: relative;
+	grid-area: p3;
+	bottom: 30px;
+}
+
+.p3:hover + .p3In, .p3In:hover, .p3In:hover + .text3 {
+	opacity: 0.5;
+}
+
+.p7 {
+	width: 350px;
+	height: 510px;
+	grid-area: p7;
+}
+.p7In {
+	grid-area: p7;
+	align-self: center;
+	justify-self: center;
+	text-align: center;
+	opacity: 0;
+}
+
+.p7In img {
+	width: 200px;
+	height: 300px;
+	background-color: white;
+	padding: 40px;
+}
+
+.p7In .text7 {
+	position: relative;
+	grid-area: p7;
+	bottom: 30px;
+}
+
+.p7:hover + .p7In, .p7In:hover, .p7In:hover + .text7 {
+	opacity: 0.5;
+}
+.p4 {
+	width: 600px;
+	height: 410px;
+	grid-area: p4;
+}
+.p4In {
+	grid-area: p4;
+	align-self: center;
+	justify-self: center;
+	text-align: center;
+	opacity: 0;
+}
+
+.p4In img {
+	width: 300px;
+	height: 200px;
+	background-color: white;
+	padding: 40px;
+}
+
+.p4In .text4 {
+	position: relative;
+	grid-area: p4;
+	bottom: 30px;
+}
+
+.p4:hover + .p4In, .p4In:hover, .p4In:hover + .text4 {
+	opacity: 0.5;
+}
+.p5 {
+	top:0;
+	width: 600px;
+	height: 810px;
+	grid-area: p5;
+}
+.p5In {
+	grid-area: p5;
+	align-self: center;
+	justify-self: center;
+	text-align: center;
+	opacity: 0;
+}
+
+.p5In img {
+	width: 400px;
+	height: 500px;
+	background-color: white;
+	padding: 40px;
+}
+
+.p5In .text5 {
+	position: relative;
+	grid-area: p5;
+	bottom: 30px;
+}
+
+.p5:hover + .p5In, .p5In:hover, .p5In:hover + .text5 {
+	opacity: 0.5;
+}
+.p6 {
+	width: 710px;
+	height: 500px;
+	grid-area: p6;
+}
+
+.p6In {
+	grid-area: p6;
+	align-self: center;
+	justify-self: center;
+	text-align: center;
+	opacity: 0;
+}
+
+.p6In img {
+	width: 500px;
+	height: 200px;
+	background-color: white;
+	padding: 40px;
+}
+
+.p6In .text6 {
+	position: relative;
+	grid-area: p6;
+	bottom: 30px;
+}
+
+.p6:hover + .p6In, .p6In:hover, .p6In:hover + .text6 {
+	opacity: 0.5;
+}
+/*foot relative*/
+footer{
+	text-align: center;
+	text-decoration: underline;
+	background-color: black;
+	position: relative;
+	width: 100%;
+	padding: 15px 0px 15px;
+}
+footer a {
+	outline: 0;
+	text-decoration: none;
+	color: #fff;
+}
+
+footer a:link, a:hover{
+	text-decoration: white;
+}
+
+footer a:active {
+	text-decoration-color: rgba(0,0,0,0);
+}
+
+.top {
+	cursor: pointer;
+	color: white;
+	background-color: black;
+	border: 3px solid white;
+	padding: 35px 30px;
+	border-radius: 60px;
+	right:30px;
+	bottom: 49px;
+	position: fixed;
+	opacity: 0.7;
+}
+
