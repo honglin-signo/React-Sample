@@ -1,13 +1,12 @@
-import React, {Component} from 'react';
-import Form from './components/Form'
+import React, { Component } from "react";
 
 class App extends Component {
-
-    render() {
-        return (<div>
-            <Form></Form>
-        </div>);
+    FormateData = (props) => {
+        return <h2>Hello</h2>
     }
+  render() {
+    return <div><this.FormateData/></div>;
+  }
 }
 
 export default App;
